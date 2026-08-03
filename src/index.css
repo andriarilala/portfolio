@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/plus-jakarta-sans.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122;
+}
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-accent: #FF4B1F;
+  --radius-4xl: 28px;
+}
+
+:root {
+  --bg: #F7F7F5;
+  --ink: #141414;
+  --ink-dim: #6A6A6E;
+  --ink-faint: #9A9A9E;
+  --surface: #FFFFFF;
+  --surface-2: #F1F1EF;
+  --line: rgba(20, 20, 20, .09);
+  --line-strong: rgba(20, 20, 20, .16);
+  --card-shadow: 0 1px 2px rgba(20, 20, 20, .04), 0 8px 24px rgba(20, 20, 20, .05);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Effects that don't reduce cleanly to utility classes */
+.card-glow {
+  background:
+    radial-gradient(420px 280px at 12% 15%, rgba(255, 75, 31, .12), transparent 60%),
+    radial-gradient(460px 320px at 90% 85%, rgba(90, 110, 255, .09), transparent 60%);
+  filter: blur(8px);
+}
+.giant-text {
+  background: linear-gradient(180deg, var(--ink) 20%, transparent 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.giant-text-soft {
+  background: linear-gradient(180deg, rgba(20, 20, 20, .4) 0%, rgba(20, 20, 20, .12) 45%, transparent 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0) }
+  to { transform: translateX(-50%) }
+}
+.animate-marquee { animation: marquee-scroll 32s linear infinite }
+.animate-marquee-fast { animation: marquee-scroll 20s linear infinite }
+.group:hover .animate-marquee,
+.group:hover .animate-marquee-fast { animation-play-state: paused }
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1 }
+  50% { opacity: .35 }
+}
+.animate-dot-pulse { animation: dot-pulse 2.4s ease-in-out infinite }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important }
+}

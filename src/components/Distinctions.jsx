@@ -1,6 +1,6 @@
 const ITEMS = [
+  { org: 'DevHunt 2025 — AEENI', title: '2e place - Devhunt', rank: 'Argent' },
   { org: 'DevHunt 2024', title: "1re place — avec l'équipe G++", rank: 'Or' },
-  { org: 'DevHunt 2025 — AEENI', title: '2e place — concours national', rank: 'Argent' },
   { org: 'HIU 2024', title: 'Participation au hackathon', rank: 'Participant' },
 ]
 

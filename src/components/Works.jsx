@@ -61,7 +61,7 @@ const PROJECTS = [
 ]
 
 const RESERVE = [
-  { name: 'Landing page Code Talent', year: '2025–2026', tech: 'Figma → intégration', angle: 'Vitrine design, de la maquette à la mise en ligne' },
+  { name: 'Landing page Code Talent', year: '2025–2026', tech: 'Figma', angle: 'Vitrine design, de la maquette à la mise en ligne' },
   { name: 'Roapay — paiement en ligne', year: '2022–2023', tech: 'Node.js, React', angle: 'Parcours utilisateur, transactions et back-office' },
   { name: 'Gestion des notes — ENS', year: '2021', tech: 'Laravel, Figma', angle: 'Conception UX/UI et identité visuelle' },
   { name: 'Identité graphique Club Multimédia', year: '2025', tech: 'Figma, Adobe XD', angle: 'Branding' },

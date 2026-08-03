@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const DESIGN_LOGOS = [
   '/images/logo-hero-section/logo-figma.png',
@@ -46,6 +46,27 @@ function LogoCycle({ logos, interval }) {
 }
 
 export default function Hero() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.currentTime = 0
+          video.play()
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.4 }
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className="pt-8 pb-0 text-center sm:pt-12 md:pt-14" id="top">
       <div className="mx-auto max-w-[full] px-5 sm:px-8">
@@ -103,9 +124,9 @@ export default function Hero() {
 
         <div className="relative mt-10 h-[220px] overflow-hidden rounded-[28px] bg-[#0B0B0C] sm:mt-14 sm:h-[500px] lg:h-[800px]" aria-hidden="true">
           <video
+            ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
             src="/images/hero.mp4"
-            autoPlay
             muted
             loop
             playsInline

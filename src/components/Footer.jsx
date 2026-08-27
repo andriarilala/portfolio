@@ -8,7 +8,11 @@ const NAV_LINKS = [
   { href: '#faq', label: 'FAQ' },
 ]
 
-const SOCIALS = ['GitHub', 'LinkedIn', 'Behance']
+const SOCIALS = [
+  { name: 'GitHub', href: 'https://github.com/andriarilala' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/herizo-niaina' },
+  { name: 'Figma', href: 'https://www.figma.com/design/M6GkeHecyG1xCWWDvJpjx3/2026?node-id=0-1&p=f&t=tF9BPZRcBjMzto9C-0' },
+]
 
 function formatAntananarivoTime() {
   try {
@@ -53,9 +57,22 @@ export default function Footer() {
           <div>
             <p className="mb-4 text-[.72rem] font-semibold tracking-[.08em] text-white/40 uppercase">Réseaux</p>
             <ul className="flex flex-col gap-2.5">
-              {SOCIALS.map((s) => (
-                <li key={s} className="text-[.92rem] font-semibold text-white/70">{s}</li>
-              ))}
+              {SOCIALS.map((s) =>
+                s.href ? (
+                  <li key={s.name}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[.92rem] font-semibold text-white no-underline hover:text-accent"
+                    >
+                      {s.name}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={s.name} className="text-[.92rem] font-semibold text-white/70">{s.name}</li>
+                )
+              )}
             </ul>
           </div>
 

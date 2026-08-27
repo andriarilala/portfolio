@@ -2,6 +2,25 @@ import { useEffect, useRef, useState } from 'react'
 
 const PROJECTS = [
   {
+    title: 'Qualitec Beauty',
+    intro: "Vitrine et prise de rendez-vous pour un salon de beauté : prestations, galerie, promotions et formulaire de contact — pensée pour transformer la visite en réservation.",
+    year: '2024 – 2025',
+    role: 'Développeur Full Stack',
+    services: ["Design d'interface", 'Développement web', 'Prise de rendez-vous'],
+    image: '/images/realisation-beauty.png',
+    link: 'https://beauty.qualitec.mg/',
+    theme: {
+      surface: '#FBEEEF',
+      surface2: '#F5DEE0',
+      ink: '#241417',
+      inkDim: '#7A5257',
+      inkFaint: '#B08890',
+      line: 'rgba(36,20,23,.08)',
+      lineStrong: 'rgba(36,20,23,.16)',
+      accent: '#B23A4E',
+    },
+  },
+  {
     title: 'TechnoloGia',
     intro: "Application mobile éducative avec IA, conçue pour le concours national DevHunt 2025 sur le thème « l'enfant et la technologie ».",
     year: '2024 – 2025',
@@ -23,12 +42,51 @@ const PROJECTS = [
     },
   },
   {
+    title: 'Maka-Share',
+    intro: "Plateforme SaaS de reconnaissance faciale pour photographes événementiels : indexation GPU en moins d'une seconde par photo, tri automatique par visage, galeries privées livrées en un lien — et facturation mobile money intégrée.",
+    year: '2024 – 2026',
+    role: 'Développeur Full Stack',
+    services: ['Reconnaissance faciale (IA)', 'Plateforme SaaS', 'Paiement mobile money'],
+    image: '/images/realisation-maka-share.png',
+    link: 'https://maka-share.qualitec.mg/',
+    theme: {
+      surface: '#F5F3EF',
+      surface2: '#EAE6DE',
+      ink: '#18130F',
+      inkDim: '#6B6259',
+      inkFaint: '#9C9186',
+      line: 'rgba(24,19,15,.09)',
+      lineStrong: 'rgba(24,19,15,.18)',
+      accent: '#FF5A1F',
+    },
+  },
+  {
+    title: "Karak's",
+    intro: "Karaoké synchronisé en temps réel : chaque participant lit sa propre vidéo en pleine qualité, seule la position de lecture circule entre les salons pour garder tout le monde calé à la même seconde.",
+    year: '2025 – 2026',
+    role: 'Développeur Full Stack',
+    services: ['Synchronisation temps réel', 'Développement web', "Système d'avatars"],
+    image: '/images/realisation-karaokay.png',
+    link: 'https://karaokay.qualitec.mg/',
+    theme: {
+      surface: '#EAF6FF',
+      surface2: '#D7ECFB',
+      ink: '#132638',
+      inkDim: '#4C6478',
+      inkFaint: '#8AA0B2',
+      line: 'rgba(19,38,56,.10)',
+      lineStrong: 'rgba(19,38,56,.18)',
+      accent: '#F5A623',
+    },
+  },
+  {
     title: "VITA'NOW",
-    intro: "VITA'NOW garde la mémoire de tes projets — les décisions, les blocages, les raisons. Tu reprends là où tu t'étais arrêté, au lieu de recommencer de zéro.",
+    intro: "VITA'NOW garde la mémoire des projets étudiants — décisions, blocages, solutions — et transforme les mémoires de fin d'études en base cherchable par l'IA. Reprendre un projet ne veut plus dire tout relire.",
     year: '2025 – 2026',
     role: 'Concepteur & développeur',
-    services: ['Conception produit', 'Développement web'],
-    image: '/images/realisation-2.png',
+    services: ['Conception produit', 'Développement web', 'Recherche IA'],
+    image: '/images/realisation-vitanow.png',
+    link: 'https://vitanow.aura-plus.site/',
     theme: {
       surface: '#13224A',
       surface2: '#1C3164',
@@ -41,26 +99,29 @@ const PROJECTS = [
     },
   },
   {
-    title: 'Neotik',
-    intro: "Interface pour Neotik, une agence de services informatiques : prestation en régie, cloud & DevOps, design, data & IA, cybersécurité et formation.",
+    title: 'OffRec',
+    intro: "OffRec centralise recommandations et offres vérifiées par la communauté : artisans et fournisseurs notés avec le prix réellement payé, offres d'emploi mises en correspondance par pourcentage d'affinité — un seul annuaire de confiance pour Madagascar.",
     year: '2025 – 2026',
-    role: 'Design UI',
-    services: ["Design d'interface"],
-    image: '/images/realisation-3.png',
+    role: 'Concepteur & développeur',
+    services: ['Conception produit', 'Développement web', 'Système de matching'],
+    image: '/images/offrec.png',
+    badge: 'Bientôt en ligne',
     theme: {
-      surface: '#171129',
-      surface2: '#231A3D',
+      surface: '#1B3FAE',
+      surface2: '#15308A',
       ink: '#FFFFFF',
-      inkDim: 'rgba(255,255,255,.68)',
-      inkFaint: 'rgba(255,255,255,.45)',
-      line: 'rgba(255,255,255,.12)',
-      lineStrong: 'rgba(255,255,255,.24)',
-      accent: '#FF4B6B',
+      inkDim: 'rgba(255,255,255,.75)',
+      inkFaint: 'rgba(255,255,255,.5)',
+      line: 'rgba(255,255,255,.16)',
+      lineStrong: 'rgba(255,255,255,.28)',
+      accent: '#8FB4FF',
+      cardBackground: 'linear-gradient(135deg, #3E6DE0 0%, #1B3FAE 55%, #12297A 100%)',
     },
   },
 ]
 
 const RESERVE = [
+  { name: 'Neotik — agence IT', year: '2025 – 2026', tech: 'Figma', angle: "Design d'interface pour une agence de services informatiques" },
   { name: 'Landing page Code Talent', year: '2025–2026', tech: 'Figma', angle: 'Vitrine design, de la maquette à la mise en ligne' },
   { name: 'Roapay — paiement en ligne', year: '2022–2023', tech: 'Node.js, React', angle: 'Parcours utilisateur, transactions et back-office' },
   { name: 'Gestion des notes — ENS', year: '2021', tech: 'Laravel, Figma', angle: 'Conception UX/UI et identité visuelle' },
@@ -135,18 +196,18 @@ export default function Works() {
                 const localOffset = progress - i
                 if (Math.abs(localOffset) > 1.05) return null
 
-                // the card itself slides a full height per step — a classic vertical
+                // the card itself slides a full width per step — a horizontal
                 // parallax swap — while its image/glow layer drifts at a slower rate,
                 // giving the illusion of depth as the card passes through
-                const translateY = -localOffset * 100
+                const translateX = -localOffset * 100
                 const imageParallax = -localOffset * 34
 
                 return (
                   <div
                     key={p.title}
-                    className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[28px] border border-[var(--c-line)] bg-[var(--c-surface)] p-[clamp(1.8rem,4vw,3rem)] shadow-[var(--card-shadow)] transition-colors duration-500 will-change-transform"
+                    className="absolute inset-2.5 flex flex-col justify-center overflow-hidden rounded-[28px] border border-[var(--c-line)] bg-[var(--c-surface)] p-[clamp(1.8rem,4vw,3rem)] shadow-[var(--card-shadow)] transition-colors duration-500 will-change-transform sm:inset-4"
                     style={{
-                      transform: `translateY(${translateY}%)`,
+                      transform: `translateX(${translateX}%)`,
                       zIndex: total - Math.round(Math.abs(localOffset) * 10),
                       pointerEvents: Math.abs(localOffset) < 0.5 ? 'auto' : 'none',
                       background: p.theme.cardBackground || undefined,
@@ -188,7 +249,7 @@ export default function Works() {
                     <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-[.85fr_1.3fr_.85fr]">
                       <p className="max-w-[28ch] text-[.95rem] text-[var(--c-ink-dim)]">{p.intro}</p>
 
-                      <div className="relative mx-auto w-full max-w-[700px]" style={{ transform: `translateY(${imageParallax}px)` }}>
+                      <div className="relative mx-auto w-full max-w-[700px]" style={{ transform: `translateX(${imageParallax}px)` }}>
                         <div
                           className="pointer-events-none absolute inset-[-15%] -z-10 rounded-full opacity-60 blur-3xl"
                           style={{ background: `radial-gradient(circle, ${p.theme.accent}29, transparent 70%)` }}
@@ -229,6 +290,16 @@ export default function Works() {
                       </div>
 
                       <div className="flex items-center gap-4">
+                        {p.link && (
+                          <a
+                            href={p.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-full border border-[var(--c-accent)] px-3.5 py-1.5 text-[.75rem] font-bold tracking-[.04em] text-[var(--c-accent)] uppercase no-underline transition hover:bg-[var(--c-accent)] hover:text-[var(--c-surface)]"
+                          >
+                            Voir le site ↗
+                          </a>
+                        )}
                         {p.badge && (
                           <span className="rounded-full border border-[var(--c-accent)] px-3.5 py-1.5 text-[.75rem] font-bold tracking-[.04em] text-[var(--c-accent)] uppercase">
                             {p.badge}

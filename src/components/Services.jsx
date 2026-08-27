@@ -14,6 +14,7 @@ const TABS = [
     label: "Design d'interface",
     text: "Conception d'interfaces sous Figma et Adobe XD, jusqu'au design system réutilisable. Je livre des maquettes pensées pour être intégrées — parce que c'est moi qui les intègre ensuite.",
     points: ['Maquettes & prototypes', 'Design system', 'Identité visuelle'],
+    link: { href: 'https://www.figma.com/design/M6GkeHecyG1xCWWDvJpjx3/2026?node-id=0-1&p=f&t=tF9BPZRcBjMzto9C-0', label: 'Voir des extraits sur Figma' },
   },
   {
     id: 'tab-3',
@@ -66,6 +67,16 @@ export default function Services() {
                 </span>
               ))}
             </div>
+            {current.link && (
+              <a
+                href={current.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-1.5 text-[.92rem] font-semibold text-accent no-underline hover:text-[var(--ink)]"
+              >
+                {current.link.label} ↗
+              </a>
+            )}
           </div>
         </div>
       </div>

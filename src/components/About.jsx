@@ -1,9 +1,9 @@
 const TIMELINE = [
-  { role: 'Développeur Full Stack', org: 'Qualitec, Fianarantsoa', year: '2024 – 2026' },
-  { role: 'Designer', org: 'Code Talent, Antananarivo', year: '2025 – 2026' },
+  { role: 'Licence en Informatique', org: 'ENI Fianarantsoa', year: '2021 – 2024' },
+  { role: 'Développeur Full Stack', org: 'Qualitec, Fianarantsoa', year: '2024 – 2026', link: 'https://qualitec.mg/' },
+  { role: 'Designer', org: 'Code Talent, Antananarivo', year: '2025 – 2026', link: 'https://www.code-talent.fr/' },
   { role: 'UX/UI Designer', org: 'Club Multimédia, ENI', year: '2025' },
   { role: 'Master 2 Génie Logiciel & BD', org: 'ENI Fianarantsoa', year: '2025 – 2026' },
-  { role: 'Licence en Informatique', org: 'ENI Fianarantsoa', year: '2021 – 2024' },
 ]
 
 const LANGS = ['Malagasy', 'Français ', 'Anglais']
@@ -26,24 +26,9 @@ export default function About() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(20,10,5,.75) 100%)' }}
+              style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(20,10,5,.55) 100%)' }}
               aria-hidden="true"
             ></div>
-            <div className="absolute bottom-4 left-4 z-10 flex gap-2" aria-hidden="true">
-              {['Gh', 'in', 'Be'].map((s) => (
-                <span
-                  key={s}
-                  className="flex h-[2.4rem] w-[2.4rem] items-center justify-center rounded-full bg-black/35 text-[.72rem] font-bold text-white backdrop-blur-sm"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-            <div className="absolute right-4 bottom-4 z-10 flex h-[5.4rem] w-[5.4rem] items-center justify-center rounded-full border border-dashed border-white/60 p-2 text-center text-[.6rem] leading-[1.50] font-bold tracking-[.02em] text-white">
-              DEVHUNT 2024
-              <br />
-              1RE PLACE
-            </div>
           </div>
 
           <div>
@@ -67,7 +52,20 @@ export default function About() {
                 <div key={t.role + t.org} className="flex items-baseline justify-between gap-4 border-b border-[var(--line)] py-4">
                   <div>
                     <p className="text-[.98rem] font-semibold text-[var(--ink)]">{t.role}</p>
-                    <p className="mt-0.5 text-[.88rem] text-[var(--ink-dim)]">{t.org}</p>
+                    <p className="mt-0.5 text-[.88rem] text-[var(--ink-dim)]">
+                      {t.link ? (
+                        <a
+                          href={t.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[var(--ink-dim)] underline decoration-[var(--line-strong)] underline-offset-2 transition hover:text-accent hover:decoration-accent"
+                        >
+                          {t.org}
+                        </a>
+                      ) : (
+                        t.org
+                      )}
+                    </p>
                   </div>
                   <span className="text-[.85rem] whitespace-nowrap text-[var(--ink-faint)] tabular-nums">{t.year}</span>
                 </div>

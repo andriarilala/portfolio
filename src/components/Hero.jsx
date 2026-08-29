@@ -132,14 +132,16 @@ export default function Hero() {
             playsInline
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/0 from-55% to-black/80" />
-          <div
-            className="pointer-events-none absolute right-0 bottom-0 flex h-28 w-28 items-center justify-center p-4 sm:h-40 sm:w-40 sm:p-6 lg:h-52 lg:w-52 lg:p-8"
-            aria-hidden="true"
+          <a
+            href="https://www.figma.com/design/M6GkeHecyG1xCWWDvJpjx3/2026?node-id=0-1&p=f&t=tF9BPZRcBjMzto9C-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute right-0 bottom-0 z-10 flex h-28 w-28 items-center justify-center p-4 sm:h-40 sm:w-40 sm:p-6 lg:h-52 lg:w-52 lg:p-8"
           >
-            <div className="flex h-full w-full items-center justify-center rounded-full border border-black/[0.06] bg-gradient-to-br from-white to-[#EFEFED] p-4 shadow-[0_2px_10px_-2px_rgba(0,0,0,.22),0_24px_50px_-16px_rgba(0,0,0,.65)] sm:p-6 lg:p-8">
-              <img src="/images/logo-hero-section/logo-figma.png" alt="" className="h-full w-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,.15)]" />
+            <div className="flex h-full w-full items-center justify-center rounded-full border border-black/[0.06] bg-gradient-to-br from-white to-[#EFEFED] p-4 shadow-[0_2px_10px_-2px_rgba(0,0,0,.22),0_24px_50px_-16px_rgba(0,0,0,.65)] transition duration-300 hover:shadow-[0_2px_10px_-2px_rgba(0,0,0,.22),0_24px_50px_-16px_rgba(0,0,0,.65),0_0_30px_rgba(255,255,255,.3)] sm:p-6 lg:p-8">
+              <img src="/images/logo-hero-section/logo-figma.png" alt="Ouvrir Figma" className="h-full w-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,.15)]" />
             </div>
-          </div>
+          </a>
           <div className="absolute bottom-5 left-5 z-10 sm:bottom-7 sm:left-8">
             <h3 className="mt-1.5 text-[clamp(1.2rem,2.8vw,1.9rem)] font-extrabold text-white">
               De la maquette Figma à la mise en ligne
